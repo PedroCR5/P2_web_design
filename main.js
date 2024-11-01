@@ -1,6 +1,6 @@
 //! Descripción
 //En este proyecto aplicaremos los conocimientos de JavaScript y DOM para crear una página que responda a cambios aplicados por un usuario y sea totalmente funcional.
-//?Para ello, haremos un "modal" que contenga el formulario de los filtros, para que podamos verlo u ocultarlo a nuestro gusto mediante un click.
+//Para ello, haremos un "modal" que contenga el formulario de los filtros, para que podamos verlo u ocultarlo a nuestro gusto mediante un click.
 //También, tendremos una serie de productos pintados (utilizando DOM y teniendo una estructura de objetos dentro de un array para un pintado sencillo y dinámico), que vayan cambiando según los filtros aplicados.
 //DISEÑO SUGERIDO: https://www.figma.com/design/e9oKogSc0W6koZmUqIbwv3/PROYECTO2?node-id=0-1&t=O64qsrsxQ40Qh06Y-1
 
@@ -10,8 +10,10 @@ Habrá un array de objetos con la información de los productos que queramos pin
 Se generan los productos recorriendo el array con un bucle y pintándolos en el HTML mediante DOM
 El contenido del HTML es muy escueto, y como mucho tiene un header y un footer, el resto irá inyectado mediante javascript */
 //! Cosas pendientes:
-//?Web FULL RESPONSIVE
-//?Cumple los requisitos mínimos del anterior proyecto en cuanto al HTML y el CSS
+//Web FULL RESPONSIVE
+//Cumple los requisitos mínimos del anterior proyecto en cuanto al HTML y el CSS
+//?pasarlo por el revisor de html y css
+//mirar meta
 //Hay un mínimo de dos filtros que funcionen en conjunto
 //Si no se encuentra ningún producto con los filtros introducidos se mostrarán 3 productos aleatorios con un mensaje de productos sugeridos
 //Existe un botón limpiar filtros, que reinicia los inputs de filtrado y pinta todos los productos
@@ -20,12 +22,15 @@ El contenido del HTML es muy escueto, y como mucho tiene un header y un footer, 
 //Primer boton y flecha hace aparecer y desaparecer los filtros
 //Pintar todos los playeros
 //desplegable filtro
-//?cada zapatilla con border radius y shadow
+//cada zapatilla con border radius y shadow
 //boton en medio y menor en cada zapatilla
 //quitar scroll horizontal
 //Hacer botones para los filtros
 //Borrar lo que hay al poner un filtro
-//? Sandwich menu
+// Sandwich menu
+//Boton izda arriba mejorar, border-radius
+//colocar el aviso de 3 productos
+//?boton sandwich mejorar
 
 const trainersList = [
   {
@@ -33,170 +38,105 @@ const trainersList = [
     model: "Air Max 1",
     price: "120,00€",
     img: "./assets/Air_Max_1.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
-
   },
   {
     brand: "New Balance",
     model: "NB 9060",
     price: "80,00€",
     img: "./assets/NB 9060.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
-
   },
   {
     brand: "Nike Original",
     model: "Nike Revolution",
     price: "90,00€",
     img: "./assets/Nike Revolution.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Adidas Original",
     model: "Forum Buckle",
     price: "100,00€",
     img: "./assets/Forum Buckle.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Adidas Original",
     model: "Campus",
     price: "120,00€",
     img: "./assets/Campus.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "New Balance",
     model: "NB 327",
     price: "120,00€",
     img: "./assets/NB 327.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Nike Original",
     model: "Dunk Low",
     price: "100,00€",
     img: "./assets/Dunk Low.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Adidas Original",
     model: "Gazelle",
     price: "90,00€",
     img: "./assets/Gazelle.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Nike Original",
     model: "Air Max SC",
     price: "150,00€",
     img: "./assets/Air Max SC.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Adidas Original",
     model: "Handball Spezial",
     price: "120,00€",
     img: "./assets/Handball Spezial.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Nike Original",
     model: "Air Force",
     price: "130,00€",
     img: "./assets/Air_Force.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "New Balance",
     model: "NB 9060",
     price: "120,00€",
     img: "./assets/NB 9060 b.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "New Balance",
     model: "NB 480",
     price: "150,00€",
     img: "./assets/NB 480.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Nike Original",
     model: "Full Force Low",
     price: "70,00€",
     img: "./assets/Full Force Low.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Nike Original",
     model: "Air Max SC",
     price: "160,00€",
     img: "./assets/Air Max SC b.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
   {
     brand: "Adidas Original",
     model: "Handball Spezial",
     price: "140,00€",
     img: "./assets/Handball Spezial b.png",
-    man: "yes",
-    women: "no",
-    childen: "yes",
-    sale: "yes"
   },
 ];
 const optionsSelectBrand = [];
-
 const headerInfo = document.createElement("header");
 const headerDiv1 = document.createElement("nav");
+const headerDiv1ImgContainer = document.createElement("div");
 const headerDiv1Img = document.createElement("img");
 const headerDiv1Ul = document.createElement("ul");
+const headerDiv1UlImg = document.createElement("button");
 const headerDiv1Li1 = document.createElement("li");
 const headerDiv1Li2 = document.createElement("li");
 const headerDiv1Li3 = document.createElement("li");
@@ -216,7 +156,6 @@ const filterReset = document.createElement("button");
 const showFilters = document.createElement("button");
 const showFiltersContainer = document.createElement("div");
 const mainInfo = document.createElement("main");
-
 const footerInfo = document.createElement("footer");
 const footerUl1 = document.createElement("ul");
 const footerUl1Li1 = document.createElement("li");
@@ -237,9 +176,11 @@ const footerUl3Li3 = document.createElement("li");
 const footerUl3Li4 = document.createElement("li");
 const footerUl3Li5 = document.createElement("li");
 const footerUl3Li6 = document.createElement("li");
-
 headerDiv3.classList = "imgHeader";
-headerBGImg.classList = "imgHeaderLogo";
+headerDiv1Img.classList = "imgHeaderLogo";
+headerDiv1Ul.classList = "selectPerson";
+headerDiv1UlImg.classList = "menuSandwich";
+headerDiv1UlImg.src = "./assets/sandwich.png";
 headerDiv3.src = "./assets/bgImgHeader.png"
 headerButton1.classList = "buttonFilter";
 headerButton2.classList = "buttonCarrito";
@@ -249,14 +190,11 @@ filterButton.classList = "filtersButtonZone";
 filterReset.classList = "filtersResetZone";
 showFilters.classList = "mostrarOcultarFiltrosClass"
 priceFilter.id = "priceMax";
-
 brandFilterText.id = "allBrands";
 brandFilter.id = "selectOfBrands";
 showFilters.id = "mostrarOcultarFiltros"
 showFiltersContainer.id = "contenedorMostrarOcultarFiltros"
-
 mainInfo.id = "zapatillas";
-
 footerInfo.classList = "InfoFooter";
 footerUl1.classList = "InfoFooterUl"
 footerUl1Li1.classList = "InfoFooterUl1";
@@ -277,26 +215,22 @@ footerUl3Li3.classList = "InfoFooterUl3";
 footerUl3Li4.classList = "InfoFooterUl3";
 footerUl3Li5.classList = "InfoFooterUl3";
 footerUl3Li6.classList = "InfoFooterUl3";
-
 headerDiv1Li1.textContent = "Hombre";
 headerDiv1Li2.textContent = "Mujer";
 headerDiv1Li3.textContent = "Niños";
 headerDiv1Li4.textContent = "Ofertas";
-
+headerDiv1Li1.classList = "liMenuSandwich";
+headerDiv1Li2.classList = "liMenuSandwich";
+headerDiv1Li3.classList = "liMenuSandwich";
+headerDiv1Li4.classList = "liMenuSandwich";
 brandFilter.options = "a";
 priceFilter.type = "number";
 brandFilterText.setAttribute("selected", "");
-//brandFilterText.setAttribute("disabled", "");
 brandFilterText.textContent = "Todas las marcas";
 priceFilter.setAttribute("type", "number");
-/* priceFilter.setAttribute("step", "1");
-priceFilter.setAttribute("max", "999"); */
-
 priceFilter.placeholder = "precio máximo €";
-
 filterButton.textContent = "Filtrar";
 filterReset.textContent = "Limpiar filtro";
-
 footerUl1.textContent = "Compra con JD";
 footerUl1Li1.textContent = "Guía de tallas";
 footerUl1Li2.textContent = "Buscador de tallas";
@@ -316,11 +250,13 @@ footerUl3Li3.textContent = "Política de privacidad";
 footerUl3Li4.textContent = "Política de Cookies";
 footerUl3Li5.textContent = "Ajustes de Cookies";
 footerUl3Li6.textContent = "Accesibilidad";
-
 document.body.appendChild(headerInfo);
 headerInfo.appendChild(headerDiv1);
-headerDiv1.appendChild(headerBGImg);
+headerDiv1.appendChild(headerDiv1ImgContainer);
+headerDiv1ImgContainer.appendChild(headerDiv1Img);
+//headerDiv1.appendChild(headerBGImg);
 headerDiv1.appendChild(headerDiv1Ul);
+headerDiv1Ul.appendChild(headerDiv1UlImg);
 headerDiv1Ul.appendChild(headerDiv1Li1);
 headerDiv1Ul.appendChild(headerDiv1Li2);
 headerDiv1Ul.appendChild(headerDiv1Li3);
@@ -337,16 +273,12 @@ headerInfo.appendChild(headerDiv3);
 headerInfo.appendChild(headerFilters);
 headerFilters.appendChild(brandFilter);
 brandFilter.appendChild(brandFilterText);
-
-
 headerFilters.appendChild(priceFilter);
 headerFilters.appendChild(filterButton);
 headerFilters.appendChild(filterReset);
 headerInfo.appendChild(showFiltersContainer);
 showFiltersContainer.appendChild(showFilters);
-
 document.body.appendChild(mainInfo);
-
 document.body.appendChild(footerInfo);
 footerInfo.appendChild(footerUl1);
 footerUl1.appendChild(footerUl1Li1);
@@ -367,7 +299,6 @@ footerUl3.appendChild(footerUl3Li3);
 footerUl3.appendChild(footerUl3Li4);
 footerUl3.appendChild(footerUl3Li5);
 footerUl3.appendChild(footerUl3Li6);
-
 const printZapatillas = (zapatillas) => {
   const zapatillasSection = document.querySelector("#zapatillas");
   for (const zapatilla of zapatillas) {
@@ -408,18 +339,13 @@ optionsSelectBrand.forEach(element => {
   const option = document.createElement("option");
   option.textContent = element;
   brandFilter.appendChild(option);
-
 });
 //funciones para los filtros
 const threeRecomendations = document.createElement("p");
+threeRecomendations.classList = "aviso3Productos";
 threeRecomendations.textContent = "Los filtros no encuentran tus productos deseados. Te recomendamos estos 3 productos";
-//headerFilters.appendChild(threeRecomendations);
 headerFilters.appendChild(threeRecomendations);
-
-//threeRecomendations.setAttribute("disabled", "");
 threeRecomendations.style.display = "none";
-
-
 const filterZapatillas = (e) => {
   const theMaxPrice = document.getElementById("priceMax");
   if (threeRecomendations.style.display === 'block') {
@@ -458,15 +384,12 @@ const filterZapatillas = (e) => {
       brandSelected.push(trainersList[num1]);
       brandSelected.push(trainersList[num2]);
       brandSelected.push(trainersList[num3]);
-
       if (threeRecomendations.style.display === 'none') {
         threeRecomendations.style.display = 'block';
       }
     } else if (brandSelected.length < 1) {
       let num1 = Math.floor(Math.random() * trainersList.length);
-
       num1 = Math.floor(Math.random() * trainersList.length);
-
       let num2 = Math.floor(Math.random() * trainersList.length);
       while ((num1 == num2)) {
         num2 = Math.floor(Math.random() * trainersList.length);
@@ -478,19 +401,14 @@ const filterZapatillas = (e) => {
       brandSelected.push(trainersList[num1]);
       brandSelected.push(trainersList[num2]);
       brandSelected.push(trainersList[num3]);
-
       if (threeRecomendations.style.display === 'none') {
         threeRecomendations.style.display = 'block';
       }
     }
     printZapatillas(brandSelected);
   }
-
 }
-
-
 filterButton.addEventListener("click", () => filterZapatillas());
-
 const resetFilterZapatillas = (e) => {
   if (threeRecomendations.style.display === 'block') {
     threeRecomendations.style.display = 'none';
@@ -501,38 +419,39 @@ const resetFilterZapatillas = (e) => {
   };
   const theMaxPriceR = document.getElementById("priceMax");
   theMaxPriceR.value = "";
-
   const brandFilterR = document.getElementById("allBrands");
   brandFilterR.selected = true;
-
   printZapatillas(trainersList);
 }
 filterReset.addEventListener("click", () => resetFilterZapatillas());
 let elementInput = document.getElementById(`priceMax`);
-//console.log(priceMax);
-//console.log(filterReset);
-headerFilters.style.display = 'flex';
+headerFilters.style.display = '';
 const toggleFilters = () => {
-  if (headerFilters.style.display === 'flex') {
+  if (headerFilters.style.display === '') {
     headerFilters.style.display = 'none';
-    // headerFilters.classList = "noVerFiltros";
     showFilters.classList = "rotar"
   } else {
-    headerFilters.style.display = 'flex';
-    //headerFilters.classList = "siVerFiltros";
+    headerFilters.style.display = '';
     showFilters.classList = "noRotar"
-
   }
 }
-
-// Deshabilitar el scroll
-/* function disableScroll() {
-  window.onscroll = function () {
-    window.scrollTo(0, 0);
-  };
-}
-disableScroll(); */
-
 showFilters.addEventListener("click", () => toggleFilters());
 
-
+const toggleMenuSandwich = () => {
+  if (menuSi === true) {
+    menuSi = false;
+    headerDiv1Li1.style.display = "block";
+    headerDiv1Li2.style.display = "block";
+    headerDiv1Li3.style.display = "block";
+    headerDiv1Li4.style.display = "block";
+  } else {
+    menuSi = true;
+    headerDiv1Li1.style.display = "none";
+    headerDiv1Li2.style.display = "none";
+    headerDiv1Li3.style.display = "none";
+    headerDiv1Li4.style.display = "none";
+  }
+  console.log(menuSi)
+}
+let menuSi = true;
+headerDiv1UlImg.addEventListener("click", () => toggleMenuSandwich());

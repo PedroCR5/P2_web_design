@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -7,32 +6,23 @@
   font-family: 'Roboto', sans-serif;
   overflow-x: inherit;
 }
-
 ul,
 ol {
   list-style: none;
 }
-
 a {
   text-decoration: none;
 }
-
 :root {
   /* COLORS */
   --rtc-color-1: #f8f4f4;
-  /* --rtc-color-2: #ff8000;
-   */
   --rtc-color-3: yellow;
   --rtc-color-4: #080404;
   --rtc-color-5: #302c2c;
   --rtc-color-6: #f0ecec;
-
   --rtc-bgColor: var(--rtc-color-4);
   --rtc-bgColor2: var(--rtc-color-5);
   --rtc-bgColor3: var(--rtc-color-6);
-
-  /*   --rtc-highlight: var(--rtc-color-2);
-  --rtc-borderColor: var(--rtc-color-3); */
   --rtc-text: var(--rtc-color-4);
   --rtc-text-2: var(--rtc-color-1);
   /* BORDER RADIUS */
@@ -44,20 +34,17 @@ a {
   --rtc-margin-m: 20px;
   --rtc-margin-l: 30px;
   --rtc-margin-xl: 40px;
-
   --rtc-padding-xs: 5px;
   --rtc-padding-s: 10px;
   --rtc-padding-m: 20px;
   --rtc-padding-l: 30px;
   --rtc-padding-xl: 40px;
-
   --rtc-gap-xs: 5px;
   --rtc-gap-s: 10px;
   --rtc-gap-m: 20px;
   --rtc-gap-l: 30px;
   --rtc-gap-xl: 40px;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -85,13 +72,10 @@ nav > div > button {
   display: flex;
   padding: var(--rtc-padding-s);
   cursor: pointer;
-  /* transition: 1.1, 0.5s; */
 }
-
 nav > div > button:hover {
   transform: scale(1.1);
 }
-
 .imgHeader {
   height: 200px;
   width: auto;
@@ -100,14 +84,15 @@ nav > div > button:hover {
   background-size: cover;
 }
 .imgHeaderLogo {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background-image: url('./assets/Logo.png');
   background-position: center top;
   background-size: cover;
   border-radius: 100%;
+  border: none;
+  overflow-x: auto;
 }
-
 .buttonFilter {
   background-image: url('./assets/icono1.png');
   background-size: cover;
@@ -120,17 +105,13 @@ nav > div > button:hover {
   background-image: url('./assets/IconoUser.png');
   background-size: cover;
 }
-
 .filtersZone {
   background-color: var(--rtc-color-6);
-  /* height: 200px;
- */
   display: flex;
   flex-direction: column;
   gap: var(--rtc-gap-s);
   padding-bottom: var(--rtc-padding-m);
 }
-
 .filtersZone > select {
   margin: 1% 40%;
   border-radius: var(--rtc-border-radius);
@@ -142,21 +123,18 @@ nav > div > button:hover {
   padding: var(--rtc-padding-xs);
   text-align: center;
 }
-
 .filtersZone > button {
   margin: 1% 44%;
   border-radius: var(--rtc-border-radius);
   padding: var(--rtc-padding-xs);
   cursor: pointer;
 }
-
 #zapatillas {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 100px;
 }
-
 .imgZapatilla {
   grid-area: img;
   width: 100%;
@@ -175,55 +153,60 @@ nav > div > button:hover {
 }
 .buyButtonZapatilla {
   grid-area: button;
-  /* idth: 100%; */
 }
 #zapatillas > div {
   gap: var(--rtc-gap-xs);
-  padding: var(--rtc-padding-m);
+  margin: var(--rtc-padding-m);
   width: 40%;
   display: grid;
   grid-template-areas:
- /*    'img img img'
-    'h3 h3 h3'
-    'p p number'
-    'button button button'; */
     'img  img'
     'h3  h3'
     'p  number'
     'button  button';
 }
-
 #zapatillas > div > img {
   height: fit-content;
 }
 #zapatillas > div > h3 {
   color: var(--rtc-text);
-  font-size: x-small;
+  font-size: small;
   font-weight: normal;
+  padding: 0px var(--rtc-padding-s);
 }
 #zapatillas > div > p {
   color: var(--rtc-text);
-  font-size: small;
+  font-size: medium;
   font-weight: normal;
+  padding: 0px var(--rtc-padding-s);
 }
 #zapatillas > div > .priceZapatilla {
   color: var(--rtc-text);
-  font-size: small;
+  font-size: medium;
   font-weight: normal;
   width: 100%;
   text-align: right;
-  /* position: bottom; */
+  padding: 0px var(--rtc-padding-s);
 }
 #zapatillas > div > button {
-  font-size: medium;
+  font-size: large;
   color: var(--rtc-text);
   display: flex;
   justify-content: center;
   cursor: pointer;
-  margin: 1px 5%;
+  margin: var(--rtc-margin-m) var(--rtc-margin-m);
   border-radius: var(--rtc-border-radius);
+  -webkit-box-shadow: -1px 2px 17px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 2px 17px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 17px -4px rgba(0, 0, 0, 0.75);
 }
-
+.eachDivZapatilla {
+  margin-top: var(--rtc-margin-m);
+  margin-bottom: var(--rtc-margin-m);
+  -webkit-box-shadow: -1px 2px 23px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 2px 23px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 23px -3px rgba(0, 0, 0, 0.75);
+}
 .InfoFooter {
   display: flex;
   flex-direction: column;
@@ -235,24 +218,20 @@ nav > div > button:hover {
   background-color: var(--rtc-bgColor);
   color: var(--rtc-text-2);
 }
-
 .InfoFooterUl {
   display: flex;
   flex-direction: column;
   font-weight: bold;
   align-items: center;
 }
-
 .InfoFooterUl1,
 .InfoFooterUl2,
 .InfoFooterUl3 {
   font-weight: normal;
 }
-
 footer > ul > li {
   cursor: pointer;
 }
-
 #contenedorMostrarOcultarFiltros {
   display: flex;
   justify-content: center;
@@ -273,19 +252,59 @@ footer > ul > li {
   position: absolute;
   width: 80px;
   height: 80px;
-  /*   position:absolute;
- */ /* display: flex;
-  align-items: center; */
   cursor: pointer;
-  /*   overflow-x: visible;
- */
-  /*   width: 50px;
-  height: 50px; */
 }
 .rotar {
   transform: rotate(180deg);
 }
-
 .buyButtonZapatilla:hover {
   background-color: var(--rtc-color-3);
+}
+.menuSandwich {
+  height: 40px;
+  width: 40px;
+  background-image: url('./assets/sandwich.png');
+  background-size: contain;
+
+  cursor: pointer;
+}
+.selectPerson > li {
+  display: none;
+}
+
+.aviso3Productos {
+  display: flex;
+  margin: var(--rtc-margin-s);
+}
+
+/*RESPONSIVE*/
+@media (min-width: 900px) {
+  .selectPerson > li {
+    display: flex;
+  }
+  .menuSandwich {
+    display: none;
+  }
+  .eachDivZapatilla {
+    max-width: 20%;
+  }
+  .filtersZone {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .filtersZone > select {
+    margin-top: var(--rtc-padding-m);
+    width: 70%;
+  }
+
+  .filtersZone > input {
+    width: 60%;
+    margin-top: var(--rtc-padding-m);
+  }
+
+  .filtersZone > button {
+    width: 50%;
+    margin-top: var(--rtc-padding-m);
+  }
 }
