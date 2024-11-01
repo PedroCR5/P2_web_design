@@ -27,7 +27,6 @@ a {
   --rtc-text-2: var(--rtc-color-1);
   /* BORDER RADIUS */
   --rtc-border-radius: 5px;
-
   /* SPACINGS */
   --rtc-margin-xs: 5px;
   --rtc-margin-s: 10px;
@@ -265,8 +264,10 @@ footer > ul > li {
   width: 40px;
   background-image: url('./assets/sandwich.png');
   background-size: contain;
-
+  border-radius: 100%;
   cursor: pointer;
+  border: none;
+  overflow-x: auto;
 }
 .selectPerson > li {
   display: none;
@@ -276,7 +277,6 @@ footer > ul > li {
   display: flex;
   margin: var(--rtc-margin-s);
 }
-
 /*RESPONSIVE*/
 @media (min-width: 900px) {
   .selectPerson > li {

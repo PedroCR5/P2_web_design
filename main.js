@@ -1,37 +1,3 @@
-//! Descripción
-//En este proyecto aplicaremos los conocimientos de JavaScript y DOM para crear una página que responda a cambios aplicados por un usuario y sea totalmente funcional.
-//Para ello, haremos un "modal" que contenga el formulario de los filtros, para que podamos verlo u ocultarlo a nuestro gusto mediante un click.
-//También, tendremos una serie de productos pintados (utilizando DOM y teniendo una estructura de objetos dentro de un array para un pintado sencillo y dinámico), que vayan cambiando según los filtros aplicados.
-//DISEÑO SUGERIDO: https://www.figma.com/design/e9oKogSc0W6koZmUqIbwv3/PROYECTO2?node-id=0-1&t=O64qsrsxQ40Qh06Y-1
-
-//! Requisitos
-/* Nuestro proyecto consta de un archivo style.css, un index.html y un index.js
-Habrá un array de objetos con la información de los productos que queramos pintar
-Se generan los productos recorriendo el array con un bucle y pintándolos en el HTML mediante DOM
-El contenido del HTML es muy escueto, y como mucho tiene un header y un footer, el resto irá inyectado mediante javascript */
-//! Cosas pendientes:
-//Web FULL RESPONSIVE
-//Cumple los requisitos mínimos del anterior proyecto en cuanto al HTML y el CSS
-//?pasarlo por el revisor de html y css
-//mirar meta
-//Hay un mínimo de dos filtros que funcionen en conjunto
-//Si no se encuentra ningún producto con los filtros introducidos se mostrarán 3 productos aleatorios con un mensaje de productos sugeridos
-//Existe un botón limpiar filtros, que reinicia los inputs de filtrado y pinta todos los productos
-//3 botones con iconos
-//Filtro de precio max
-//Primer boton y flecha hace aparecer y desaparecer los filtros
-//Pintar todos los playeros
-//desplegable filtro
-//cada zapatilla con border radius y shadow
-//boton en medio y menor en cada zapatilla
-//quitar scroll horizontal
-//Hacer botones para los filtros
-//Borrar lo que hay al poner un filtro
-// Sandwich menu
-//Boton izda arriba mejorar, border-radius
-//colocar el aviso de 3 productos
-//?boton sandwich mejorar
-
 const trainersList = [
   {
     brand: "Nike Original",
@@ -254,7 +220,6 @@ document.body.appendChild(headerInfo);
 headerInfo.appendChild(headerDiv1);
 headerDiv1.appendChild(headerDiv1ImgContainer);
 headerDiv1ImgContainer.appendChild(headerDiv1Img);
-//headerDiv1.appendChild(headerBGImg);
 headerDiv1.appendChild(headerDiv1Ul);
 headerDiv1Ul.appendChild(headerDiv1UlImg);
 headerDiv1Ul.appendChild(headerDiv1Li1);
@@ -436,7 +401,6 @@ const toggleFilters = () => {
   }
 }
 showFilters.addEventListener("click", () => toggleFilters());
-
 const toggleMenuSandwich = () => {
   if (menuSi === true) {
     menuSi = false;
